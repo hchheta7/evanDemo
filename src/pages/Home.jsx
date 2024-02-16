@@ -104,25 +104,25 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("data.json");
-        // if (!response.ok) {
-        //     throw new Error('failed to fetch data');
-        // }
+    const data = userData;
 
-        const data = userData;
+    setprofiles(data);
+    setLoading(false);
+    // const fetchData = async () => {
+    //   try {
+    //     // const response = await fetch("data.json");
+    //     // if (!response.ok) {
+    //     //     throw new Error('failed to fetch data');
+    //     // }
 
-        setprofiles(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("fetching error", error);
-        setError(error.message);
-        setLoading(false);
-      }
-    };
+    //   } catch (error) {
+    //     console.error("fetching error", error);
+    //     setError(error.message);
+    //     setLoading(false);
+    //   }
+    // };
 
-    fetchData();
+    // fetchData();
   }, []);
 
   if (loading) {
